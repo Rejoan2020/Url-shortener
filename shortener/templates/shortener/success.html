@@ -1,0 +1,23 @@
+<!DOCTYPE>
+<html>
+    <head>
+    <title>
+        Cutly
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    </head>
+    <body style = 'background-color:#414a4c;color:#F8F0E3'>
+        <div style = 'width:800px; margin:0 auto'>
+
+            <h1>Created!</h1>
+
+            <p><b>Original</b> : {{ object.url }}</p>
+            
+            <p> 
+                <b>Short URL</b> : <a href='{{object.get_short_url}}'>{{ object.get_short_url }} </a>
+            </p>
+
+            <a class='btn btn-default' href='/'>  +Make another </a>
+        </div>
+    </body>
+</html>
