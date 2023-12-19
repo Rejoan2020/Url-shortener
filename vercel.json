@@ -4,7 +4,7 @@
     {
         "src": "Url-shortener/wsgi.py",
         "use": "@vercel/python",
-        "config":{ "maxLamdaSize" : "15mb", "runtime":"python3.11"}
+        "config":{ "maxLamdaSize" : "15mb", "runtime":"python3.9"}
     },
     {
         "src" : "build_files.sh",
