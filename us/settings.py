@@ -86,15 +86,16 @@ WSGI_APPLICATION = 'us.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+import os
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'URL': os.getenv('POSTGRES_URL'),
-        'NAME': os.getenv('PGNAME'),
-        'USER': os.getenv('PGUSER'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'HOST': os.getenv('PGHOST'),
-        'PORT': os.getenv('PGPORT'),
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'DgCAe6f*ebAeD1-*4ABc1bffGF-a-Gb*',
+        'HOST': 'monorail.proxy.rlwy.net',
+        'PORT': '34053',
     }
 }
 
@@ -143,6 +144,5 @@ MAXSIZE = 15
 MINSIZE = 6
 
 
-import os
 STATICFILES_DIRS = os.path.join(BASE_DIR,'static'),
 STATIC_ROOT =  os.path.join(BASE_DIR,'staticfiles_build','static')
