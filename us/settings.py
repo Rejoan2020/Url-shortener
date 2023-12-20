@@ -61,8 +61,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'us.urls'
 ROOT_HOSTCONF = 'us.hosts'
 DEFAULT_HOST = 'www'
-DEFAULT_REDIRECT_PATH = 'http://www.cutly.com:8000'
-PARENT_HOST = "cutly.com:8000"
+DEFAULT_REDIRECT_PATH = 'url-shortener-ashy-two.vercel.app'
+PARENT_HOST = "url-shortener-ashy-two.vercel.app"
 
 TEMPLATES = [
     {
