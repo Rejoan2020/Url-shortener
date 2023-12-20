@@ -20,7 +20,7 @@
         "dest":"/"
     },
     {
-        "src":"/test",
+        "src":"Url-shortener/wsgi.py",
         "dest":"/"
     }
 ]
