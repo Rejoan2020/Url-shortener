@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-*cf_0)kf5c)8b3h5ja2jq6lrw3@oy)^qr3a#hzd1&!w8)no!*l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.cutly.com','url-shortener-ashy-two.vercel.app','cutly.com','http://www.cutly.com:8000','.vercel.app','.now.sh']
+ALLOWED_HOSTS = ['url-shortener-ashy-two.vercel.app','www.cutly.com','.vercel.app','.now.sh']
 
 
 # Application definition
