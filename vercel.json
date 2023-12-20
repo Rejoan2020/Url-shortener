@@ -23,5 +23,8 @@
         "src":"/(.*)",
         "dest":"Url-shortener/wsgi.py"
     }
+],
+"rewrites":[
+    {"source":"/{.*}","destination":"/"}
 ]
 }
