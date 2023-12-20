@@ -21,7 +21,7 @@ class home_view(View):
         form = SubmitUrlForm()
         context = {
             "form": form,
-            "title": "Cutly.com"
+            "title": "Shorten your long urls"
         }
         return render(request,"shortener/home.html",context)
     
