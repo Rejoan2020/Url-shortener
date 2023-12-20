@@ -21,7 +21,7 @@ def removewww(str):
     for i in str:
         if cnt>=7 or len(str)<=cnt:
             break
-        f+=i
+        # f+=i
         cnt+=1
     cnt += 3
     for cnt in range(11,len(str)):
