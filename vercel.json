@@ -2,7 +2,7 @@
 "version": 2,
 "builds":[
     {
-        "src": "Url-shortener/wsgi.py",
+        "src": "us/wsgi.py",
         "use": "@vercel/python",
         "config":{ "maxLamdaSize" : "15mb", "runtime":"python3.9"}
     },
@@ -16,12 +16,12 @@
 ],
 "routes":[
     {
-        "src":"/",
-        "dest":"/"
+        "src":"/static/(.*)",
+        "dest":"/static/$1"
     },
     {
-        "src":"Url-shortener/wsgi.py",
-        "dest":"/"
+        "src":"/(.*)",
+        "dest":"us/wsgi.py"
     }
 ]
 }
