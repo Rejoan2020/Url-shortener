@@ -1,5 +1,5 @@
 from django.db import models
-from .utils import short_url_generator
+from .utils import short_url_generator,removewww
 from django.conf import settings
 # Create your models here.
 from .validators import validate_dot_com,validate_url
@@ -44,7 +44,10 @@ class stored_url(models.Model):
     
     def __unicode__(self):
         return str(self.url)
-        
+    
     def get_short_url(self):
-        path = reverse('sc',kwargs={'short_url':self.short_url},host = 'www',scheme='http')
+        path = reverse('sc',kwargs={'short_url':self.short_url},scheme='http')
+        # print(path)
+        path = removewww(path)
+        print(path)
         return path

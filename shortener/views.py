@@ -34,6 +34,7 @@ class home_view(View):
         }
         if form.is_valid():
             submitted_url = form.cleaned_data.get("url")
+            # print(submitted_url)
             if not "https://" in submitted_url:
                 submitted_url = "https://" + submitted_url
             obj,created = stored_url.objects.get_or_create(url = submitted_url)
@@ -41,7 +42,7 @@ class home_view(View):
                 "object": obj,
                 "created": created
             }
-            # print(obj)
+            print(obj)
             if created:
                 template = "shortener/success.html"
             else:

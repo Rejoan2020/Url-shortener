@@ -14,3 +14,17 @@ def short_url_generator(instance,size=6):
     if does_exist_in_query_set:
         return short_url_generator(size=size)
     return new_code
+
+def removewww(str):
+    f = ""
+    cnt = 0
+    for i in str:
+        if cnt>=7 or len(str)<=cnt:
+            break
+        f+=i
+        cnt+=1
+    cnt += 3
+    for cnt in range(11,len(str)):
+        f+=str[cnt]
+    print(f)
+    return f
