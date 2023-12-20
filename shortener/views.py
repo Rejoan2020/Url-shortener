@@ -30,7 +30,7 @@ class home_view(View):
         template = "shortener/home.html"
         context = {
             "form" : form,
-            "title" : "Shorten your Url with Cutly.com"
+            "title" : "Shorten your long urls"
         }
         if form.is_valid():
             submitted_url = form.cleaned_data.get("url")
