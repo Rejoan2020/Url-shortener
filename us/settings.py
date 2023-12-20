@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*cf_0)kf5c)8b3h5ja2jq6lrw3@oy)^qr3a#hzd1&!w8)no!*l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['.vercel.app','.now.sh']
 
@@ -86,7 +86,6 @@ WSGI_APPLICATION = 'us.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-import os
 
 DATABASES = {
     'default': {
@@ -143,6 +142,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MAXSIZE = 15
 MINSIZE = 6
 
+import os
 
 STATICFILES_DIRS = os.path.join(BASE_DIR,'static'),
 STATIC_ROOT =  os.path.join(BASE_DIR,'staticfiles_build','static')
