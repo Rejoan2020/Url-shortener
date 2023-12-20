@@ -30,7 +30,7 @@ class home_view(View):
         template = "shortener/home.html"
         context = {
             "form" : form,
-            "title" : "Cutly.com"
+            "title" : "Shorten your Url with Cutly.com"
         }
         if form.is_valid():
             submitted_url = form.cleaned_data.get("url")
@@ -51,11 +51,11 @@ class home_view(View):
 
 class class_redirect_views(View):
     def get(self,request,short_url=None,*args, **kwargs):
-        print(short_url)
+        # print(short_url)
         qs = stored_url.objects.filter(short_url__iexact = short_url)
-        print(404)
+        print(short_url)
         if qs.count() !=1 and not qs.exists():
-            print(2)
+            # print(2)
             raise Http404
         obj = qs.first()
         #click events
