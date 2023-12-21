@@ -1,17 +1,30 @@
 <!DOCTYPE>
 <html>
     <head>
+        
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Define styles for the blank box */
+        
+    </style>
+
     <title>
         Cutly
     </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     </head>
-    <body style = 'background-color:#414a4c;color:#F8F0E3 '>
-        <div class='container'>
+    <body style = 'background-color:#414a4c;color:#F8F0E3'>
+        <div class='centered-container'>
             <div class='row'>
                 <div class='text-center col-sm-10'>
                     <div class='col-sm-5 col-sm-offset-5'>
-                        <h3>{{ title }}</h3>
+                        <div class ="centered-container">
+                        <div  class = 'text-left col-sm-20'>
+                            <h1><b>Shorten a long link</b></h1>
+                            <h4>paste the link here</h4>
+                        </div>
+                    </div>
                         <form method='POST' action='.' style="color:#414a4c">{% csrf_token %}
                             {% comment %} <input name = 'url' type='text' placeholder = 'shorten your url'> {% endcomment %}
                             {{form.as_p}}

@@ -21,7 +21,7 @@ class home_view(View):
         form = SubmitUrlForm()
         context = {
             "form": form,
-            "title": "Shorten your long urls"
+            "title": "Shorten a long link"
         }
         return render(request,"shortener/home.html",context)
     
@@ -30,7 +30,7 @@ class home_view(View):
         template = "shortener/home.html"
         context = {
             "form" : form,
-            "title" : "Shorten your long urls"
+            "title" : "Shorten a long link"
         }
         if form.is_valid():
             submitted_url = form.cleaned_data.get("url")
