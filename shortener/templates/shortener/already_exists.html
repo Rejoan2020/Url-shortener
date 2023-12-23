@@ -6,6 +6,8 @@
   <style>
     body {
       font-family: 'Arial', sans-serif;
+      background: url('static/bg4.jpg') center/cover;
+      color: #ecf0f1; /* Text color on top of the background image */
       margin: 0;
       padding: 0;
       background-color: #f0f0f0;
@@ -18,13 +20,13 @@
     }
 
     h1 {
-      color: #3498db;
+      color: #ecf0f1;
     }
 
     p {
       font-size: 18px;
       line-height: 1.6;
-      color: #555;
+      color: #ecf0f1;
       margin-bottom: 30px;
       tex
     }
@@ -49,11 +51,11 @@
 </head>
 <body>
 
-  <h1>Already exist !</h1>
-  <p> 
-    <b>Short URL</b> : <a href='{{object.get_short_url}}'>{{ object.get_short_url }} </a>
+<h1>Already exist !</h1>
+<p> 
+    <a href='{{object.get_short_url}}'>{{ object.get_short_url }} </a>
 </p>
-  <a href="/" class="cta-button">Back to Home</a>
+<a href="/" class="cta-button">Back to Home</a>
 
 </body>
 </html>
