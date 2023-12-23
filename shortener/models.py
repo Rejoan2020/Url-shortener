@@ -26,7 +26,7 @@ class stored_urlManager(models.Manager):
 SHORTCODE_MAX = getattr(settings,"MAX_SIZE",15)
 
 class stored_url(models.Model):
-    url = models.CharField(max_length=228, validators=[validate_url,validate_dot_com])
+    url = models.CharField(max_length=10000, validators=[validate_url,validate_dot_com])
     short_url = models.CharField(max_length=SHORTCODE_MAX,unique=True,blank=True)
     last_modified = models.DateTimeField(auto_now=True)
     active = models.BooleanField(default=True)

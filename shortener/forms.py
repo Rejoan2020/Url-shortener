@@ -12,7 +12,7 @@ class SubmitUrlForm(forms.Form):
                 "class":"form-control"
             }
         )
-        )
+    )
 
     # def clean(self):
     #     cleaned_data = super(SubmitUrlForm,self).clean()
