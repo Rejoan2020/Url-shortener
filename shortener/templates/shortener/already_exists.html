@@ -1,22 +1,59 @@
-<!DOCTYPE>
-<html>
-    <head>
-    <title>
-        Cutly
-    </title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    </head>
-    <body style = 'background-color:#414a4c;color:#F8F0E3'>
-        <div style = 'width:400px; margin:0 auto'>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
 
-            <h1>Already Exists</h1>
+    h1 {
+      color: #3498db;
+    }
 
-            <p><b>Original : </b>{{ object.url }}</p>
-            <p> 
-                <b>Short URL :</b> <a href='{{object.get_short_url}}'>{{ object.get_short_url }} </a>
-            </p>
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 30px;
+      tex
+    }
 
-            <a class='btn btn-default' href='/'> +Make another </a>
-        </div>
-    </body>
+    .cta-button {
+      display: inline-block;
+      background-color: #3498db;
+      color: #ecf0f1;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+  <title>Classic Page with Button</title>
+</head>
+<body>
+
+  <h1>Already exist !</h1>
+  <p> 
+    <b>Short URL</b> : <a href='{{object.get_short_url}}'>{{ object.get_short_url }} </a>
+</p>
+  <a href="/" class="cta-button">Back to Home</a>
+
+</body>
 </html>
