@@ -1,4 +1,61 @@
-sing local host short and redirectable url can be made easily.
-This site currently run in local host only.
-Thank you.
-added new words.
+Django URL Shortener Project
+
+Welcome to the Django URL Shortener project! This project leverages the power of Django to create a robust and customizable URL shortening service. 
+Easily convert long URLs into short, shareable links with just a few clicks.
+
+Table of Contents
+
+    - Getting Started
+        i.Prerequisites
+        ii.Installation
+    -Usage
+        i.Shortening a URL
+        ii.Accessing the Shortened URL
+    -Configuration
+    -Contributing
+    -License
+
+Getting Started
+
+Prerequisites
+
+Before you start, ensure you have the following installed:
+
+-    Python
+-    Django
+
+Installation
+
+-Clone the repository
+-Navigate to the project directory
+-Create a virtual environment (recommended):
+-Activate the virtual environment:
+-Install dependencies:
+-Apply migrations:
+-Start the development server:
+-Now your Django URL shortener is up and running!
+
+
+Usage
+
+Shortening a URL
+live link: https://url-shortener-ashy-two.vercel.app
+
+or
+
+visit the following endpoint in your browser:
+http://localhost:8000/
+
+Enter the long URL in the provided form, and you will receive a shortened URL.
+Accessing the Shortened URL
+
+Simply visit the shortened URL in your browser, and you will be redirected to the original long URL.
+
+
+Configuration
+
+Feel free to contribute to the project! Fork the repository, make your changes, and submit a pull request.
+Bug reports and feature requests are welcome.
+Feel free to use, modify, and distribute the code.
+
+Happy URL shortening with Django!
