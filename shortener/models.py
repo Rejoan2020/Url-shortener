@@ -54,7 +54,7 @@ class stored_url(models.Model):
         return path
 
 class feedback(models.Model):
-    name = models.CharField(max_length = 50)
+    name = models.CharField(max_length = 50,)
     email = models.EmailField(max_length = 60,validators = [email_validator])
     message = models.TextField(max_length = 1000)
 

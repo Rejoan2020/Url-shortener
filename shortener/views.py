@@ -1,4 +1,4 @@
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,get_object_or_404,redirect
 from django.views import View
 from django.http import Http404, HttpResponse,HttpResponseRedirect
 from .models import stored_url,feedback
@@ -77,13 +77,16 @@ class Contact_View(View):
     
     def post(self,request,*args, **kwargs):
         form = SubmitFeedbackForm(request.POST)
+        context = {
+        }
         if form.is_valid:
             form.save()
-        context = {
-            "form":form,
-            "gmail" : "rejoan523@gmail.com",
-            "text" : "sent !"
-        }
+            context = {
+                "form":form,
+                "gmail" : "rejoan523@gmail.com",
+            }
+            return redirect('../contact')
+        
         return render(request,"shortener/contact.html",context)
 
 class class_redirect_views(View):
