@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - SnapShort</title>
+    <style>
+        body {
+            background-color:black;
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            line-height: 1.6;
+            background-image: url('../static/bg4.jpg');
+            background-size: cover;
+            background-position: center;
+            {% comment %} posicenter/cover; {% endcomment %}
+        }
+        h1, h2 {
+            color: white;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align:left;
+            margin-left:50px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .msg{
+            color:white;
+            background-color:rgba(0,0,0,.7);
+            width: 1000px; 
+            border-radius:50px;
+            text-align: center;
+            {% comment %} line-height: 200px; /* Equal to the height for vertical centering */ {% endcomment %}
+            border-radius: 50px;
+            margin:0px 250px 0px 250px;
+        }
+        .home{
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <div class = "msg">
+        <h1>Our Services</h1>
+
+        <p>We make link management simple and efficient.</p>
+
+        <h2>Key Features:</h2>
+
+        <ul>
+            <li><strong>Instant URL Shortening:</strong> Shorten your URLs quickly and effortlessly.</li>
+            <li><strong>Analytics Dashboard:</strong> Gain insights into link performance with our detailed analytics.</li>
+            <li><strong>Reliability:</strong> Trust in our robust infrastructure for stable and dependable short URLs.</li>
+            <!-- Add more features as needed -->
+        </ul>
+
+        <h2>How It Works:</h2>
+
+        <p>Using SnapShort is easy and straightforward:</p>
+
+        <ul>
+            <li>Copy your long URL.</li>
+            <li>Paste it into our shortening tool.</li>
+            <li>Click 'Submit' and start sharing your concise link!</li>
+        </ul>
+
+        <h2>Why Choose SnapShort?</h2>
+        <ul>
+            <li>Efficient and user-friendly interface.</li>
+            <li>Continuous improvements and updates.</li>
+            <li>Dedicated support to assist you whenever needed.</li>
+        </ul>
+
+        <p>Ready to streamline your links? Get started with SnapShort today!</p>
+
+        <p >Return to <a class="home"  href="/">Home</a></p>
+    </div>
+</body>
+</html>

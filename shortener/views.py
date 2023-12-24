@@ -1,8 +1,8 @@
 from django.shortcuts import render,get_object_or_404
 from django.views import View
 from django.http import Http404, HttpResponse,HttpResponseRedirect
-from .models import stored_url
-from .forms import SubmitUrlForm
+from .models import stored_url,feedback
+from .forms import SubmitUrlForm,SubmitFeedbackForm
 from analytics.models import ClickEvent
 
 # Create your views here.
@@ -21,7 +21,7 @@ class home_view(View):
         form = SubmitUrlForm()
         context = {
             "form": form,
-            "title": "Shorten a long link"
+            "title": "Shorten a long link",
         }
         return render(request,"shortener/home.html",context)
     
@@ -32,6 +32,7 @@ class home_view(View):
             "form" : form,
             "title" : "Shorten a long link"
         }
+        objs = ClickEvent.objects.all()
         if form.is_valid():
             submitted_url = form.cleaned_data.get("url")
             # print(submitted_url)
@@ -40,9 +41,10 @@ class home_view(View):
             obj,created = stored_url.objects.get_or_create(url = submitted_url)
             context = {
                 "object": obj,
-                "created": created
+                "created": created,
+                "count" : objs.count,
+                # "time":objs.st_url
             }
-            print(obj)
             if created:
                 template = "shortener/success.html"
             else:
@@ -50,17 +52,50 @@ class home_view(View):
         
         return render(request,template,context)
 
+class About_view(View):
+    def get(self,request,*args, **kwargs):
+        context = {
+            "name": "Md. Rejoanur Rahman Apu",
+        }
+        return render(request,"shortener/about.html",context)
+
+class Services_view(View):
+    def get(self,request,*args, **kwargs):
+        context = {
+            "dummy": "Nothing",
+        }
+        return render(request,"shortener/services.html",context)
+
+class Contact_View(View):
+    def get(self,request,*args, **kwargs):
+        form = SubmitFeedbackForm()
+        context = {
+            "gmail" : "rejoan523@gmail.com",
+            "form":form
+        }
+        return render(request,"shortener/contact.html",context) 
+    
+    def post(self,request,*args, **kwargs):
+        form = SubmitFeedbackForm(request.POST)
+        if form.is_valid:
+            form.save()
+        context = {
+            "form":form,
+            "gmail" : "rejoan523@gmail.com",
+            "text" : "sent !"
+        }
+        return render(request,"shortener/contact.html",context)
+
 class class_redirect_views(View):
     def get(self,request,short_url=None,*args, **kwargs):
         # print(short_url)
         qs = stored_url.objects.filter(short_url__iexact = short_url)
-        print(short_url)
+        # print(short_url)
         if qs.count() !=1 and not qs.exists():
             # print(2)
             raise Http404
         obj = qs.first()
         #click events
-        print(obj)
         ClickEvent.objects.create_event(obj)
         return HttpResponseRedirect(obj.url)
 

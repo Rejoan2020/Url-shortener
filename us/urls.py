@@ -17,13 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include, re_path
-from shortener.views import class_redirect_views,home_view
+from shortener.views import class_redirect_views,home_view,Contact_View,About_view,Services_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('about/',About_view.as_view()),
+    path('services/',Services_view.as_view()),
+    path('contact/',Contact_View.as_view()),
     re_path(r'^(?P<short_url>[\w{6,15}]+)/$', class_redirect_views.as_view(),name = "sc"),
     # re_path(r'^b/(?P<shortcode>[\w{6,15}]+)/$', func_redirect_views),
-    path('',home_view.as_view())
+    path('',home_view.as_view()),
 ]
 # urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 # urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

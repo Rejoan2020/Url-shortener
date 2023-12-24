@@ -1,5 +1,6 @@
 from django import forms
 from django.core.validators import URLValidator
+from .models import feedback
 from .validators import validate_dot_com,validate_url
 
 class SubmitUrlForm(forms.Form):
@@ -14,6 +15,10 @@ class SubmitUrlForm(forms.Form):
         )
     )
 
+class SubmitFeedbackForm(forms.ModelForm):
+    class Meta:
+        model = feedback
+        fields = ['name','email','message']
     # def clean(self):
     #     cleaned_data = super(SubmitUrlForm,self).clean()
     #     print(cleaned_data)

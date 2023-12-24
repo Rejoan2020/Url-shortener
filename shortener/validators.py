@@ -1,6 +1,6 @@
 from django import forms
 from django.core.exceptions import ValidationError
-from django.core.validators import URLValidator
+from django.core.validators import URLValidator,EmailValidator
 
 def validate_url(value):
     url_validator = URLValidator()
@@ -23,3 +23,9 @@ def validate_dot_com(value):
     if not "com" in value:
         raise ValidationError(".com is absent")
     return value
+
+def email_validator(value):
+    b = EmailValidator(value)
+    return b
+
+    

@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-*cf_0)kf5c)8b3h5ja2jq6lrw3@oy)^qr3a#hzd1&!w8)no!*l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['www.cutly.com','127.0.0.1','url-shortener-ashy-two.vercel.app','cutly.com','http://www.cutly.com:8000','.vercel.app','.now.sh']
+ALLOWED_HOSTS = ['127.0.0.1','url-shortener-ashy-two.vercel.app','.vercel.app','.now.sh']
 
 
 # Application definition

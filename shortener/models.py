@@ -2,7 +2,7 @@ from django.db import models
 from .utils import short_url_generator,removewww
 from django.conf import settings
 # Create your models here.
-from .validators import validate_dot_com,validate_url
+from .validators import validate_dot_com,validate_url,email_validator
 from django_hosts.resolvers import reverse
 
 class stored_urlManager(models.Manager):
@@ -32,6 +32,7 @@ class stored_url(models.Model):
     active = models.BooleanField(default=True)
 
     def save(self,*args, **kwargs):
+        # print("hi")
         if self.short_url is None or self.short_url == "":
             self.short_url = short_url_generator(self)
         super(stored_url,self).save(*args,**kwargs)
@@ -46,8 +47,25 @@ class stored_url(models.Model):
         return str(self.url)
     
     def get_short_url(self):
+        self.save()
         path = reverse('sc',kwargs={'short_url':self.short_url},scheme='http')
         # print(path)
         path = removewww(path)
-        print(path)
         return path
+
+class feedback(models.Model):
+    name = models.CharField(max_length = 50)
+    email = models.EmailField(max_length = 60,validators = [email_validator])
+    message = models.TextField(max_length = 1000)
+
+    def save(self,*args, **kwargs):
+        print('saving...')
+        super(feedback,self).save(*args,**kwargs)
+    
+    def __str__(self):
+        self.save()
+        ret_str = self.message + " (" + self.name + ")"
+        return str(ret_str) 
+    def __unicode__(self):
+        ret_str = self.message + " (" + self.name + ")"
+        return str(ret_str)
