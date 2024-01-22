@@ -9,7 +9,7 @@ html, body {
 }
 
 .centered-container {
-  text-align: center; /* Optional: Align text or inline elements within the container */
+  text-align: center;  
   padding: 20px;
-  border: 1px solid #ccc; /* Optional: Add border for visibility */
+  border: 1px solid #ccc; 
 }
