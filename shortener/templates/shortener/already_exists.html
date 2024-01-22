@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black and Grey Page with Button</title>
+    <title>Snapshort</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -31,21 +31,21 @@
         }
 
         .back-button {
-          padding: 10px 20px;
-          font-size: 16px;
-          color: #fff;
-          background-color: rgb(0,0,0,.5);
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-          transition: background-color 0.3s ease;
-      }
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        background-color: rgb(0,0,0,.5);
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
 
-      .back-button:hover {
-          background-color: rgb(1,1,1,0);
-      }
-        .urlcolor{
-          color = white;
+    .back-button:hover {
+        background-color: rgb(1,1,1,0);
+    }
+    .urlcolor{
+        color = white;
         }
     </style>
 </head>
@@ -53,7 +53,7 @@
 
     <div class="container">
         <h1>Already exist !</h1>
-        <p > <a  href='{object.get_short_url}'>{{ object.get_short_url }} </a></p>
+        <p > <a  href={{object.get_short_url}}>{{ object.get_short_url }} </a></p>
         <button class="back-button" onclick="goBack()">Back</button>
 
       <script>
