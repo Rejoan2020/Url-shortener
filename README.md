@@ -40,19 +40,17 @@ Installation
 -Start the development server:
 -Now your Django URL shortener is up and running!
 
--Technology used
+- Technology used
+  
 ![alt text](https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/163789614/original/6d8dc8508cebeb830e44bc50d5cffdb7bfcbe736/do-projects-in-python-django-html-css.jpeg)
 
--Demo
+- Demo
+
 ![01231-ezgif com-video-to-gif-converter(1)](https://github.com/Rejoan2020/Url-shortener/assets/63773925/f12d068d-27a0-4342-9343-eee66555c1f6)
 
-Usage
 
-Shortening a URL
 live link: https://url-shortener-ashy-two.vercel.app
-
 or
-
 visit the following endpoint in your browser:
 http://localhost:8000/
 
